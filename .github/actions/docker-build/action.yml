@@ -83,7 +83,7 @@ runs:
         build-args: |
           FIEF_VERSION=${{ inputs.fief_version }}
         context: .   # use repository root as the context
-        dockerfile: docker/Dockerfile  # adjust path if needed
+        file: docker/Dockerfile  # adjust path if needed
         platforms: linux/amd64, linux/arm64
         push: true
         tags: ${{ steps.meta.outputs.tags }}
