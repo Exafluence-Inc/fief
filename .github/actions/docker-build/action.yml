@@ -70,6 +70,7 @@ runs:
         hatch run translations.compile
         hatch run static.build
     - name: Build PyPI
+      shell: bash
       run: |
         hatch build
     - name: Set raw version variable
