@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y build-essential redis libpq-dev \
     && pip install --upgrade pip supervisor \
-    && python --version \
+    && python --version
 
 # RUN pip install fief-server==${FIEF_VERSION}
 COPY dist/ /app/dist/
