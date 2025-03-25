@@ -16,7 +16,7 @@ RUN pip install dist/*.whl
 RUN apt-get autoremove -y build-essential \
     && mkdir -p /data/db
 
-COPY supervisord.conf /etc/supervisord.conf
+COPY ./docker/supervisord.conf /etc/supervisord.conf
 
 ENV DATABASE_LOCATION=/data/db
 ENV SECRETS_DIR /run/secrets
