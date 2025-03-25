@@ -145,35 +145,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - name: Install dependencies
-        shell: bash
-        run: |
-          python -m pip install --upgrade pip
-          pip install hatch
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-      - name: Install Node dependencies
-        shell: bash
-        run: |
-          npm ci
-      - name: Compile translations, build assets and set telemetry key
-        shell: bash
-        run: |
-          hatch run translations.compile
-          hatch run static.build
-      - name: Build PyPI
-        run: |
-          hatch build
-      - name: Set raw version variable
-        shell: bash
-        run: |
-          ls -la
       # - name: Wait package to be truly available from PyPI
       #   shell: bash
       #   run: |
