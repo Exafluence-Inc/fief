@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y build-essential redis libpq-dev \
     && python --version \
 
 # RUN pip install fief-server==${FIEF_VERSION}
-COPY . .
-RUN pip install -e .
+COPY dist/ /app/dist/
+RUN pip install dist/*.whl
 
 RUN apt-get autoremove -y build-essential \
     && mkdir -p /data/db
